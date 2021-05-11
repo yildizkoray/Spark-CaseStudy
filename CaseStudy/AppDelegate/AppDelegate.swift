@@ -10,10 +10,12 @@ import UIKit
 @main
 public final class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    public var window: UIWindow?
+    public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     
-    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    public func application(_ application: UIApplication,
+                            didFinishLaunchingWithOptions
+                                launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        AppRouter(with: window!).start()
         return true
     }
 }
