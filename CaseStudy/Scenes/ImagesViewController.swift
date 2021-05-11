@@ -7,12 +7,8 @@
 
 import UIKit
 
-private struct Constants {
-    static let title = "Images"
-}
-
 public protocol ImagesViewProtocol: AnyObject {
-    func prepareNavigationBar()
+    func setTitle(with title: String)
 }
 
 public final class ImagesViewController: UIViewController, ViewController {
@@ -30,8 +26,7 @@ public final class ImagesViewController: UIViewController, ViewController {
 // MARK: - ImagesViewProtocol
 
 extension ImagesViewController: ImagesViewProtocol {
-    
-    public func prepareNavigationBar() {
-        title = Constants.title
+    public func setTitle(with title: String) {
+        self.title = title
     }
 }

@@ -7,6 +7,10 @@
 
 import Foundation
 
+private struct Constants {
+    static let title = "Images"
+}
+
 public protocol ImagesPresenterProtocol: Presenter {
     
 }
@@ -27,6 +31,6 @@ public final class ImagesPresenter {
 extension ImagesPresenter: ImagesPresenterProtocol {
     
     public func viewDidLoad() {
-        view?.prepareNavigationBar()
+        view?.setTitle(with: Constants.title)
     }
 }
