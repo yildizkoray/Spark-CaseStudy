@@ -9,11 +9,14 @@ import UIKit
 
 public protocol ImagesViewProtocol: AnyObject {
     func setTitle(with title: String)
+    func setTitleLabel(title: String)
 }
 
 public final class ImagesViewController: UIViewController, ViewController {
     
     public static var storyboardName: UIStoryboard.Name = .main
+    
+    @IBOutlet private weak var titleLabel: UILabel!
     
     public var presenter: ImagesPresenterProtocol!
     
@@ -28,5 +31,9 @@ public final class ImagesViewController: UIViewController, ViewController {
 extension ImagesViewController: ImagesViewProtocol {
     public func setTitle(with title: String) {
         self.title = title
+    }
+    
+    public func setTitleLabel(title: String) {
+        titleLabel.text = title
     }
 }

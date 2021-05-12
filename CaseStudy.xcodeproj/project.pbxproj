@@ -25,6 +25,27 @@
 		B1D0552C264B016500E3F62A /* ImagesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0552B264B016500E3F62A /* ImagesPresenterTests.swift */; };
 		B1D05538264B048500E3F62A /* MockImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05537264B048500E3F62A /* MockImagesRouter.swift */; };
 		B1D0553D264B056C00E3F62A /* MockImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0553C264B056C00E3F62A /* MockImagesView.swift */; };
+		B1D0554A264B094100E3F62A /* ConfigReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05549264B094100E3F62A /* ConfigReader.swift */; };
+		B1D05552264B095B00E3F62A /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05551264B095B00E3F62A /* String+Additions.swift */; };
+		B1D05560264B0A6800E3F62A /* Bundle+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0555F264B0A6800E3F62A /* Bundle+Additions.swift */; };
+		B1D05569264B0AB200E3F62A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05568264B0AB200E3F62A /* API.swift */; };
+		B1D0556E264B0B2000E3F62A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0556D264B0B2000E3F62A /* APIError.swift */; };
+		B1D05573264B0B6F00E3F62A /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05572264B0B6F00E3F62A /* APIResponse.swift */; };
+		B1D05578264B0B9200E3F62A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05577264B0B9200E3F62A /* Service.swift */; };
+		B1D0557E264B0C0100E3F62A /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0557D264B0C0100E3F62A /* RestAPI.swift */; };
+		B1D05584264B0C6600E3F62A /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05583264B0C6600E3F62A /* HTTPTask.swift */; };
+		B1D0558D264B0E3300E3F62A /* Array+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0558C264B0E3300E3F62A /* Array+Additions.swift */; };
+		B1D05595264B0EB200E3F62A /* RestAPIMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05594264B0EB200E3F62A /* RestAPIMiddleware.swift */; };
+		B1D0559A264B0F1E00E3F62A /* Alamofire+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05599264B0F1E00E3F62A /* Alamofire+Additions.swift */; };
+		B1D055A6264B0F7400E3F62A /* HTTPHeaders+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055A5264B0F7400E3F62A /* HTTPHeaders+Additions.swift */; };
+		B1D055AC264B100F00E3F62A /* Dictionary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055AB264B100F00E3F62A /* Dictionary+Additions.swift */; };
+		B1D055B7264B10F100E3F62A /* RestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055B6264B10F100E3F62A /* RestResponse.swift */; };
+		B1D055BC264B10FF00E3F62A /* RestArrayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055BB264B10FF00E3F62A /* RestArrayResponse.swift */; };
+		B1D055C1264B115E00E3F62A /* RestObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055C0264B115E00E3F62A /* RestObjectResponse.swift */; };
+		B1D055CD264B130F00E3F62A /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055CC264B130F00E3F62A /* RestService.swift */; };
+		B1D055F9264B1FBA00E3F62A /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055F8264B1FBA00E3F62A /* Interactor.swift */; };
+		B1D055FE264B20A500E3F62A /* ImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055FD264B20A500E3F62A /* ImagesInteractor.swift */; };
+		B1D05603264B297900E3F62A /* RestMetaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05602264B297900E3F62A /* RestMetaResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +88,27 @@
 		B1D0552B264B016500E3F62A /* ImagesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPresenterTests.swift; sourceTree = "<group>"; };
 		B1D05537264B048500E3F62A /* MockImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagesRouter.swift; sourceTree = "<group>"; };
 		B1D0553C264B056C00E3F62A /* MockImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagesView.swift; sourceTree = "<group>"; };
+		B1D05549264B094100E3F62A /* ConfigReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigReader.swift; sourceTree = "<group>"; };
+		B1D05551264B095B00E3F62A /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		B1D0555F264B0A6800E3F62A /* Bundle+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Additions.swift"; sourceTree = "<group>"; };
+		B1D05568264B0AB200E3F62A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B1D0556D264B0B2000E3F62A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		B1D05572264B0B6F00E3F62A /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		B1D05577264B0B9200E3F62A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B1D0557D264B0C0100E3F62A /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		B1D05583264B0C6600E3F62A /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		B1D0558C264B0E3300E3F62A /* Array+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Additions.swift"; sourceTree = "<group>"; };
+		B1D05594264B0EB200E3F62A /* RestAPIMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIMiddleware.swift; sourceTree = "<group>"; };
+		B1D05599264B0F1E00E3F62A /* Alamofire+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Additions.swift"; sourceTree = "<group>"; };
+		B1D055A5264B0F7400E3F62A /* HTTPHeaders+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPHeaders+Additions.swift"; sourceTree = "<group>"; };
+		B1D055AB264B100F00E3F62A /* Dictionary+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Additions.swift"; sourceTree = "<group>"; };
+		B1D055B6264B10F100E3F62A /* RestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestResponse.swift; sourceTree = "<group>"; };
+		B1D055BB264B10FF00E3F62A /* RestArrayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestArrayResponse.swift; sourceTree = "<group>"; };
+		B1D055C0264B115E00E3F62A /* RestObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestObjectResponse.swift; sourceTree = "<group>"; };
+		B1D055CC264B130F00E3F62A /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		B1D055F8264B1FBA00E3F62A /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		B1D055FD264B20A500E3F62A /* ImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesInteractor.swift; sourceTree = "<group>"; };
+		B1D05602264B297900E3F62A /* RestMetaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMetaResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				B163264F264AE92F004A42FC /* AppDelegate */,
+				B1D05567264B0A9100E3F62A /* API */,
+				B1D05547264B092B00E3F62A /* Common */,
 				B1D05501264AEE6F00E3F62A /* Extensions */,
 				B1632653264AE93D004A42FC /* Scenes */,
 				B163263F264AE708004A42FC /* Resources */,
@@ -172,6 +216,7 @@
 				B1D05511264AEF6300E3F62A /* ImagesRouter.swift */,
 				B1632610264AE650004A42FC /* ImagesViewController.swift */,
 				B1632612264AE650004A42FC /* Main.storyboard */,
+				B1D055FD264B20A500E3F62A /* ImagesInteractor.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -179,9 +224,10 @@
 		B1D05500264AEE6100E3F62A /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B1D054FB264AEE2E00E3F62A /* ViewController.swift */,
-				B1D0550C264AEF0400E3F62A /* Router.swift */,
+				B1D055F8264B1FBA00E3F62A /* Interactor.swift */,
 				B1D0551E264AF7F400E3F62A /* Presenter.swift */,
+				B1D0550C264AEF0400E3F62A /* Router.swift */,
+				B1D054FB264AEE2E00E3F62A /* ViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -189,6 +235,8 @@
 		B1D05501264AEE6F00E3F62A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B1D055A1264B0F5600E3F62A /* Alamofire */,
+				B1D05556264B0A1600E3F62A /* Foundation */,
 				B1D05502264AEE8A00E3F62A /* UIKit */,
 			);
 			path = Extensions;
@@ -218,6 +266,117 @@
 				B1D0553C264B056C00E3F62A /* MockImagesView.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		B1D05547264B092B00E3F62A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B1D05548264B093400E3F62A /* ConfigReader */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B1D05548264B093400E3F62A /* ConfigReader */ = {
+			isa = PBXGroup;
+			children = (
+				B1D05549264B094100E3F62A /* ConfigReader.swift */,
+			);
+			path = ConfigReader;
+			sourceTree = "<group>";
+		};
+		B1D05556264B0A1600E3F62A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				B1D055AA264B100200E3F62A /* Dictionary */,
+				B1D0558B264B0E1100E3F62A /* Array */,
+				B1D0555E264B0A5700E3F62A /* Bundle */,
+				B1D0555A264B0A2000E3F62A /* String */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		B1D0555A264B0A2000E3F62A /* String */ = {
+			isa = PBXGroup;
+			children = (
+				B1D05551264B095B00E3F62A /* String+Additions.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		B1D0555E264B0A5700E3F62A /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				B1D0555F264B0A6800E3F62A /* Bundle+Additions.swift */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		B1D05567264B0A9100E3F62A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B1D05568264B0AB200E3F62A /* API.swift */,
+				B1D0556D264B0B2000E3F62A /* APIError.swift */,
+				B1D05572264B0B6F00E3F62A /* APIResponse.swift */,
+				B1D05577264B0B9200E3F62A /* Service.swift */,
+				B1D0557C264B0BF600E3F62A /* Rest */,
+				B1D05582264B0C2A00E3F62A /* Task */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B1D0557C264B0BF600E3F62A /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				B1D0557D264B0C0100E3F62A /* RestAPI.swift */,
+				B1D05594264B0EB200E3F62A /* RestAPIMiddleware.swift */,
+				B1D055CC264B130F00E3F62A /* RestService.swift */,
+				B1D055C5264B116800E3F62A /* Response */,
+			);
+			path = Rest;
+			sourceTree = "<group>";
+		};
+		B1D05582264B0C2A00E3F62A /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				B1D05583264B0C6600E3F62A /* HTTPTask.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		B1D0558B264B0E1100E3F62A /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				B1D0558C264B0E3300E3F62A /* Array+Additions.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		B1D055A1264B0F5600E3F62A /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				B1D055A5264B0F7400E3F62A /* HTTPHeaders+Additions.swift */,
+				B1D05599264B0F1E00E3F62A /* Alamofire+Additions.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		B1D055AA264B100200E3F62A /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				B1D055AB264B100F00E3F62A /* Dictionary+Additions.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		B1D055C5264B116800E3F62A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B1D055B6264B10F100E3F62A /* RestResponse.swift */,
+				B1D055BB264B10FF00E3F62A /* RestArrayResponse.swift */,
+				B1D055C0264B115E00E3F62A /* RestObjectResponse.swift */,
+				B1D05602264B297900E3F62A /* RestMetaResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,14 +518,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D05512264AEF6300E3F62A /* ImagesRouter.swift in Sources */,
+				B1D05560264B0A6800E3F62A /* Bundle+Additions.swift in Sources */,
+				B1D055CD264B130F00E3F62A /* RestService.swift in Sources */,
 				B1D05505264AEEB100E3F62A /* UIStoryboard+Additions.swift in Sources */,
 				B1D0551F264AF7F400E3F62A /* Presenter.swift in Sources */,
+				B1D055A6264B0F7400E3F62A /* HTTPHeaders+Additions.swift in Sources */,
+				B1D05595264B0EB200E3F62A /* RestAPIMiddleware.swift in Sources */,
 				B1D054FC264AEE2E00E3F62A /* ViewController.swift in Sources */,
+				B1D0559A264B0F1E00E3F62A /* Alamofire+Additions.swift in Sources */,
 				B1D0550D264AEF0500E3F62A /* Router.swift in Sources */,
 				B1D05524264AFD5700E3F62A /* ImagesPresenter.swift in Sources */,
 				B1D05517264AEFBF00E3F62A /* AppRouter.swift in Sources */,
+				B1D055C1264B115E00E3F62A /* RestObjectResponse.swift in Sources */,
+				B1D0558D264B0E3300E3F62A /* Array+Additions.swift in Sources */,
+				B1D05573264B0B6F00E3F62A /* APIResponse.swift in Sources */,
+				B1D055BC264B10FF00E3F62A /* RestArrayResponse.swift in Sources */,
+				B1D05578264B0B9200E3F62A /* Service.swift in Sources */,
+				B1D05603264B297900E3F62A /* RestMetaResponse.swift in Sources */,
+				B1D05569264B0AB200E3F62A /* API.swift in Sources */,
+				B1D055FE264B20A500E3F62A /* ImagesInteractor.swift in Sources */,
+				B1D055AC264B100F00E3F62A /* Dictionary+Additions.swift in Sources */,
+				B1D0557E264B0C0100E3F62A /* RestAPI.swift in Sources */,
+				B1D05584264B0C6600E3F62A /* HTTPTask.swift in Sources */,
+				B1D055B7264B10F100E3F62A /* RestResponse.swift in Sources */,
 				B1632611264AE650004A42FC /* ImagesViewController.swift in Sources */,
+				B1D0554A264B094100E3F62A /* ConfigReader.swift in Sources */,
 				B163260D264AE650004A42FC /* AppDelegate.swift in Sources */,
+				B1D05552264B095B00E3F62A /* String+Additions.swift in Sources */,
+				B1D055F9264B1FBA00E3F62A /* Interactor.swift in Sources */,
+				B1D0556E264B0B2000E3F62A /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +722,9 @@
 		B1632634264AE651004A42FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_HOST = 54.78.219.186;
+				API_PORT = 8081;
+				API_SCHEME = http;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +744,9 @@
 		B1632635264AE651004A42FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_HOST = 54.78.219.186;
+				API_PORT = 8081;
+				API_SCHEME = http;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

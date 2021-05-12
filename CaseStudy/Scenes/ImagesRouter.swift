@@ -26,9 +26,11 @@ extension ImagesRouter: ImagesRouterProtocol {
         
         let view = createViewController()
         let navigator = UINavigationController(rootViewController: view)
+        let interactor = ImagesInteractor()
         
-        let presenter = ImagesPresenter(view: view, router: self)
+        let presenter = ImagesPresenter(view: view, router: self, interactor: interactor)
         view.presenter = presenter
+        interactor.output = presenter
         
         return navigator
     }
