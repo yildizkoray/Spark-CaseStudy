@@ -9,6 +9,7 @@ import UIKit
 
 public protocol ImagesRouterProtocol {
     func start() -> UINavigationController
+    func navigateToImageViewController(with id: String?)
 }
 
 public final class ImagesRouter: Router {
@@ -33,5 +34,9 @@ extension ImagesRouter: ImagesRouterProtocol {
         interactor.output = presenter
         
         return navigator
+    }
+    
+    public func navigateToImageViewController(with id: String? = nil) {
+        print(id ?? .empty)
     }
 }

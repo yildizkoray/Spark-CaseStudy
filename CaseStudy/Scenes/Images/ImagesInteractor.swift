@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol ImagesInteractorProtocol: AnyObject {
-    func images()
+    func images(page: Int)
 }
 
 public protocol ImagesInteractorDelegate: AnyObject {
@@ -20,23 +20,9 @@ public final class ImagesInteractor: Interactor {
 }
 
 extension ImagesInteractor: ImagesInteractorProtocol {
-    public func images() {
-        service.execute(task: GetImagesTask(), type: RestArrayResponse<Image>.self) { [weak self] response in
+    public func images(page: Int) {
+        service.execute(task: GetImagesTask(page: page), type: RestArrayResponse<Image>.self) { [weak self] response in
             self?.output?.handleImages(response)
         }
     }
-}
-
-import Alamofire
-
-public struct GetImagesTask: HTTPTask {
-    public var method: HTTPMethod = .get
-    
-    public var path: String = "assets"
-    
-    public var description: String = "dasda"
-}
-
-public struct Image: Decodable {
-    var title: String
 }
