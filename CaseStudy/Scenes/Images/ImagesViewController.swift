@@ -15,6 +15,8 @@ public protocol ImagesViewProtocol: AnyObject {
     func setTitle(with title: String)
     func prepareTableView()
     func reloadTableView()
+    func setTableViewVisibility(isHidden: Bool)
+    func deleteRow(at indexPath: IndexPath)
 }
 
 public final class ImagesViewController: UIViewController, ViewController {
@@ -34,6 +36,11 @@ public final class ImagesViewController: UIViewController, ViewController {
 // MARK: - ImagesViewProtocol
 
 extension ImagesViewController: ImagesViewProtocol {
+    public func deleteRow(at indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [indexPath], with: .left)
+        tableView.endUpdates()
+    }
     public func prepareTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -44,6 +51,10 @@ extension ImagesViewController: ImagesViewProtocol {
     
     public func reloadTableView() {
         tableView.reloadData()
+    }
+    
+    public func setTableViewVisibility(isHidden: Bool) {
+        tableView.isHidden = isHidden
     }
     
     public func setTitle(with title: String) {
@@ -68,13 +79,21 @@ extension ImagesViewController: UITableViewDataSource {
         cell.presenter = cellPresenter
         return cell
     }
+    
+    public func tableView(_ tableView: UITableView,
+                          commit editingStyle: UITableViewCell.EditingStyle,
+                          forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.delete(at: indexPath)
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
 
 extension ImagesViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectItem(at: indexPath)
+        presenter.didSelect(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

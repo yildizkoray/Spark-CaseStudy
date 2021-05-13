@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12D11F7264C9DC8003EE280 /* DeleteImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D11F6264C9DC8003EE280 /* DeleteImageTask.swift */; };
 		B163260D264AE650004A42FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163260C264AE650004A42FC /* AppDelegate.swift */; };
 		B1632611264AE650004A42FC /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1632610264AE650004A42FC /* ImagesViewController.swift */; };
 		B1632614264AE650004A42FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1632612264AE650004A42FC /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		B1AA447B264C8909001028E5 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA4479264C8909001028E5 /* ImageCell.swift */; };
 		B1AA447C264C8909001028E5 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1AA447A264C8909001028E5 /* ImageCell.xib */; };
 		B1AA4481264C8A81001028E5 /* ImageCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA4480264C8A81001028E5 /* ImageCellPresenter.swift */; };
+		B1AA4681264C9B86001028E5 /* Encodable+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA4680264C9B86001028E5 /* Encodable+Additions.swift */; };
 		B1AD5D22264C760400F89918 /* ImagePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD5D21264C760400F89918 /* ImagePresentation.swift */; };
 		B1AD5D2F264C7A3600F89918 /* ImagesPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD5D2E264C7A3600F89918 /* ImagesPresentation.swift */; };
 		B1B35D80264C6CDE0087C252 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B35D7F264C6CDE0087C252 /* Image.swift */; };
@@ -73,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B12D11F6264C9DC8003EE280 /* DeleteImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageTask.swift; sourceTree = "<group>"; };
 		B1632609264AE650004A42FC /* CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaseStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B163260C264AE650004A42FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1632610264AE650004A42FC /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		B1AA4479264C8909001028E5 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		B1AA447A264C8909001028E5 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		B1AA4480264C8A81001028E5 /* ImageCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellPresenter.swift; sourceTree = "<group>"; };
+		B1AA4680264C9B86001028E5 /* Encodable+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Additions.swift"; sourceTree = "<group>"; };
 		B1AD5D21264C760400F89918 /* ImagePresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresentation.swift; sourceTree = "<group>"; };
 		B1AD5D2E264C7A3600F89918 /* ImagesPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPresentation.swift; sourceTree = "<group>"; };
 		B1B35D7F264C6CDE0087C252 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -251,6 +255,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B1AA467F264C9B63001028E5 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				B1AA4680264C9B86001028E5 /* Encodable+Additions.swift */,
+			);
+			path = Codable;
+			sourceTree = "<group>";
+		};
 		B1AD5D1D264C750700F89918 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +283,7 @@
 		B1B35D7C264C6C920087C252 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B1AD5D1D264C750700F89918 /* UI */,
 				B1B35D7D264C6CB60087C252 /* API */,
 				B1D055FD264B20A500E3F62A /* ImagesInteractor.swift */,
 				B1D05523264AFD5700E3F62A /* ImagesPresenter.swift */,
@@ -283,7 +296,6 @@
 		B1B35D7D264C6CB60087C252 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B1AD5D1D264C750700F89918 /* UI */,
 				B1B35D7E264C6CBC0087C252 /* Entities */,
 				B1B35D87264C6D1F0087C252 /* Task */,
 			);
@@ -301,6 +313,7 @@
 		B1B35D87264C6D1F0087C252 /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				B12D11F6264C9DC8003EE280 /* DeleteImageTask.swift */,
 				B1B35D88264C6D2E0087C252 /* GetImagesTask.swift */,
 			);
 			path = Task;
@@ -372,9 +385,10 @@
 		B1D05556264B0A1600E3F62A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				B1D055AA264B100200E3F62A /* Dictionary */,
 				B1D0558B264B0E1100E3F62A /* Array */,
 				B1D0555E264B0A5700E3F62A /* Bundle */,
+				B1AA467F264C9B63001028E5 /* Codable */,
+				B1D055AA264B100200E3F62A /* Dictionary */,
 				B1D0555A264B0A2000E3F62A /* String */,
 			);
 			path = Foundation;
@@ -614,10 +628,12 @@
 				B1D05595264B0EB200E3F62A /* RestAPIMiddleware.swift in Sources */,
 				B1D054FC264AEE2E00E3F62A /* ViewController.swift in Sources */,
 				B1D0559A264B0F1E00E3F62A /* Alamofire+Additions.swift in Sources */,
+				B12D11F7264C9DC8003EE280 /* DeleteImageTask.swift in Sources */,
 				B1D0550D264AEF0500E3F62A /* Router.swift in Sources */,
 				B1D05524264AFD5700E3F62A /* ImagesPresenter.swift in Sources */,
 				B1D05517264AEFBF00E3F62A /* AppRouter.swift in Sources */,
 				B1D055C1264B115E00E3F62A /* RestObjectResponse.swift in Sources */,
+				B1AA4681264C9B86001028E5 /* Encodable+Additions.swift in Sources */,
 				B1D0558D264B0E3300E3F62A /* Array+Additions.swift in Sources */,
 				B1D05573264B0B6F00E3F62A /* APIResponse.swift in Sources */,
 				B1D055BC264B10FF00E3F62A /* RestArrayResponse.swift in Sources */,

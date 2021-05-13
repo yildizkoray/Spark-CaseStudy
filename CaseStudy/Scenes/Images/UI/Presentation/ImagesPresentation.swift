@@ -8,7 +8,7 @@
 import Foundation
 
 public struct ImagesPresentation {
-    let images: [ImagePresentation]
+    var images: [ImagePresentation]
     
     init(images: [Image]) {
         self.images = images.map(ImagePresentation.init)

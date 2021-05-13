@@ -14,7 +14,8 @@ private struct Constants {
 public protocol ImagesPresenterProtocol: Presenter {
     var numberOfItems: Int { get }
     
-    func didSelectItem(at indexPath: IndexPath)
+    func delete(at indexPath: IndexPath)
+    func didSelect(at indexPath: IndexPath)
     func image(at indexPath: IndexPath) -> ImagePresentation
 }
 
@@ -24,11 +25,7 @@ public final class ImagesPresenter {
     private let router: ImagesRouterProtocol
     private let interactor: ImagesInteractorProtocol
     
-    var images: ImagesPresentation = .empty {
-        didSet {
-            view?.reloadTableView()
-        }
-    }
+    var presentation: ImagesPresentation = .empty
     
     private var page: Int = .zero
     
@@ -44,19 +41,24 @@ public final class ImagesPresenter {
 extension ImagesPresenter: ImagesPresenterProtocol {
     
     public var numberOfItems: Int {
-        return images.images.count
+        return presentation.images.count
     }
     
-    public func didSelectItem(at indexPath: IndexPath) {
+    public func didSelect(at indexPath: IndexPath) {
         router.navigateToImageViewController(with: image(at: indexPath).id)
     }
     
     public func image(at indexPath: IndexPath) -> ImagePresentation {
-        return images.images[indexPath.row]
+        return presentation.images[indexPath.row]
+    }
+    
+    public func delete(at indexPath: IndexPath) {
+        interactor.delete(id: presentation.images[indexPath.row].id)
     }
     
     public func viewDidLoad() {
         view?.prepareTableView()
+        view?.setTableViewVisibility(isHidden: true)
         view?.setTitle(with: Constants.title)
         interactor.images(page: page)
     }
@@ -64,15 +66,30 @@ extension ImagesPresenter: ImagesPresenterProtocol {
 
 // MARK: - ImagesInteractorDelegate
 extension ImagesPresenter: ImagesInteractorDelegate {
-    public func handleImages(_ result: NetworkResult<RestArrayResponse<Image>>) {
+    
+    public func handleDelete(_ result: NetworkResult<RestObjectResponse<Image>>) {
         switch result {
         case .success(let response):
-            page = response.hasNextPage ? page + 1 : page
-            images = ImagesPresentation(images: response.data)
+            guard let index = presentation.images.firstIndex(where: { $0.id == response.data.id }) else { return }
+            let indexPath = IndexPath(row: index, section: .zero)
+            presentation.images.remove(at: index)
+            view?.deleteRow(at: indexPath)
             
         case .failure(let error):
             print(error.localizedDescription)
         }
     }
     
+    public func handleImages(_ result: NetworkResult<RestArrayResponse<Image>>) {
+        switch result {
+        case .success(let response):
+            page = response.hasNextPage ? page + 1 : page
+            presentation = ImagesPresentation(images: response.data)
+            view?.setTableViewVisibility(isHidden: false)
+            view?.reloadTableView()
+            
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
 }
