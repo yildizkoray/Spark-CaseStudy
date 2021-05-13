@@ -17,6 +17,8 @@ public protocol ImagesViewProtocol: AnyObject {
     func reloadTableView()
     func setTableViewVisibility(isHidden: Bool)
     func deleteRow(at indexPath: IndexPath)
+    func refresh()
+    func endRefreshing()
 }
 
 public final class ImagesViewController: UIViewController, ViewController {
@@ -36,6 +38,11 @@ public final class ImagesViewController: UIViewController, ViewController {
 // MARK: - ImagesViewProtocol
 
 extension ImagesViewController: ImagesViewProtocol {
+    
+    public func endRefreshing() {
+        tableView.endRefreshing()
+    }
+    
     public func deleteRow(at indexPath: IndexPath) {
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .left)
@@ -47,6 +54,11 @@ extension ImagesViewController: ImagesViewProtocol {
         tableView.register(UINib(nibName: String(describing: ImageCell.self), bundle: nil),
                            forCellReuseIdentifier: String(describing: ImageCell.self))
         tableView.contentInset = Constants.contentInsetsForTableView
+        tableView.addRefresher(selector: #selector(refresh))
+    }
+    
+    @objc public func refresh() {
+        presenter.refresh()
     }
     
     public func reloadTableView() {
@@ -95,5 +107,22 @@ extension ImagesViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelect(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - Refresh Control
+
+public extension UIScrollView {
+    
+    func addRefresher(color: UIColor = .lightGray, selector: Selector) {
+        
+        let refresher = UIRefreshControl()
+        refresher.tintColor = color
+        refresher.addTarget(nil, action: selector, for: .valueChanged)
+        refreshControl = refresher
+    }
+    
+    func endRefreshing() {
+        refreshControl?.endRefreshing()
     }
 }

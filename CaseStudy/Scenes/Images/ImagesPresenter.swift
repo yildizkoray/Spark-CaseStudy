@@ -17,6 +17,7 @@ public protocol ImagesPresenterProtocol: Presenter {
     func delete(at indexPath: IndexPath)
     func didSelect(at indexPath: IndexPath)
     func image(at indexPath: IndexPath) -> ImagePresentation
+    func refresh()
 }
 
 public final class ImagesPresenter {
@@ -62,6 +63,10 @@ extension ImagesPresenter: ImagesPresenterProtocol {
         view?.setTitle(with: Constants.title)
         interactor.images(page: page)
     }
+    
+    public func refresh() {
+        interactor.images(page: .zero)
+    }
 }
 
 // MARK: - ImagesInteractorDelegate
@@ -87,6 +92,7 @@ extension ImagesPresenter: ImagesInteractorDelegate {
             presentation = ImagesPresentation(images: response.data)
             view?.setTableViewVisibility(isHidden: false)
             view?.reloadTableView()
+            view?.endRefreshing()
             
         case .failure(let error):
             print(error.localizedDescription)
