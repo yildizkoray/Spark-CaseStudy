@@ -37,6 +37,6 @@ extension ImagesRouter: ImagesRouterProtocol {
     }
     
     public func navigateToImageViewController(with id: String? = nil) {
-        print(id ?? .empty)
+        ImageRouter(navigator: navigator).start(with: id)
     }
 }

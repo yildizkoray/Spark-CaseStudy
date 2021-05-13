@@ -12,13 +12,14 @@ private struct Constants {
 }
 
 public protocol ImagesViewProtocol: AnyObject {
-    func setTitle(with title: String)
+    func deleteRow(at indexPath: IndexPath)
+    func endRefreshing()
     func prepareTableView()
+    func prepareAddBarButton()
     func reloadTableView()
     func setTableViewVisibility(isHidden: Bool)
-    func deleteRow(at indexPath: IndexPath)
+    func setTitle(with title: String)
     func refresh()
-    func endRefreshing()
 }
 
 public final class ImagesViewController: UIViewController, ViewController {
@@ -32,6 +33,15 @@ public final class ImagesViewController: UIViewController, ViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
+    }
+    
+    @objc private func addButtonDidTap() {
+        presenter.addBarButtonDidTap()
     }
 }
 
@@ -55,6 +65,12 @@ extension ImagesViewController: ImagesViewProtocol {
                            forCellReuseIdentifier: String(describing: ImageCell.self))
         tableView.contentInset = Constants.contentInsetsForTableView
         tableView.addRefresher(selector: #selector(refresh))
+    }
+    
+    public func prepareAddBarButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(addButtonDidTap))
     }
     
     @objc public func refresh() {

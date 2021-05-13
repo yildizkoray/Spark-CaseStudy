@@ -39,7 +39,7 @@ public final class RestService: Service {
                 else {
                     completion(.success(response.value!))
                 }
-            case .failure:
+            case .failure(let error):
                 completion(.failure(.afError))
             }
         }

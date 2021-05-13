@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10191CE264D550B00DCA35A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10191CD264D550B00DCA35A /* ImageViewController.swift */; };
+		B10191D3264D55BF00DCA35A /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10191D2264D55BF00DCA35A /* ImagePresenter.swift */; };
+		B10191DB264D56AF00DCA35A /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10191DA264D56AF00DCA35A /* ImageRouter.swift */; };
+		B10191E0264D57E400DCA35A /* ImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10191DF264D57E400DCA35A /* ImageInteractor.swift */; };
 		B12D11F7264C9DC8003EE280 /* DeleteImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D11F6264C9DC8003EE280 /* DeleteImageTask.swift */; };
 		B163260D264AE650004A42FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163260C264AE650004A42FC /* AppDelegate.swift */; };
 		B1632611264AE650004A42FC /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1632610264AE650004A42FC /* ImagesViewController.swift */; };
@@ -55,6 +59,8 @@
 		B1D055F9264B1FBA00E3F62A /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055F8264B1FBA00E3F62A /* Interactor.swift */; };
 		B1D055FE264B20A500E3F62A /* ImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D055FD264B20A500E3F62A /* ImagesInteractor.swift */; };
 		B1D05603264B297900E3F62A /* RestMetaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05602264B297900E3F62A /* RestMetaResponse.swift */; };
+		B1FEA060264D5C5E00AFAD9D /* GetImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEA05F264D5C5E00AFAD9D /* GetImageTask.swift */; };
+		B1FEA070264D759500AFAD9D /* CreateImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEA06F264D759500AFAD9D /* CreateImageTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B10191CD264D550B00DCA35A /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		B10191D2264D55BF00DCA35A /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
+		B10191DA264D56AF00DCA35A /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
+		B10191DF264D57E400DCA35A /* ImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractor.swift; sourceTree = "<group>"; };
 		B12D11F6264C9DC8003EE280 /* DeleteImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageTask.swift; sourceTree = "<group>"; };
 		B1632609264AE650004A42FC /* CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaseStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B163260C264AE650004A42FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +137,8 @@
 		B1D055F8264B1FBA00E3F62A /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		B1D055FD264B20A500E3F62A /* ImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesInteractor.swift; sourceTree = "<group>"; };
 		B1D05602264B297900E3F62A /* RestMetaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMetaResponse.swift; sourceTree = "<group>"; };
+		B1FEA05F264D5C5E00AFAD9D /* GetImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageTask.swift; sourceTree = "<group>"; };
+		B1FEA06F264D759500AFAD9D /* CreateImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B10191CC264D54E800DCA35A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEA05E264D5A7700AFAD9D /* API */,
+				B10191CD264D550B00DCA35A /* ImageViewController.swift */,
+				B10191D2264D55BF00DCA35A /* ImagePresenter.swift */,
+				B10191DA264D56AF00DCA35A /* ImageRouter.swift */,
+				B10191DF264D57E400DCA35A /* ImageInteractor.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		B1632600264AE650004A42FC = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +255,7 @@
 			children = (
 				B1D05500264AEE6100E3F62A /* Base */,
 				B1B35D7C264C6C920087C252 /* Images */,
+				B10191CC264D54E800DCA35A /* Image */,
 				B1632612264AE650004A42FC /* Main.storyboard */,
 			);
 			path = Scenes;
@@ -478,6 +503,15 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		B1FEA05E264D5A7700AFAD9D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEA05F264D5C5E00AFAD9D /* GetImageTask.swift */,
+				B1FEA06F264D759500AFAD9D /* CreateImageTask.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -620,6 +654,7 @@
 				B1D05512264AEF6300E3F62A /* ImagesRouter.swift in Sources */,
 				B1D05560264B0A6800E3F62A /* Bundle+Additions.swift in Sources */,
 				B1B35D80264C6CDE0087C252 /* Image.swift in Sources */,
+				B1FEA060264D5C5E00AFAD9D /* GetImageTask.swift in Sources */,
 				B1D055CD264B130F00E3F62A /* RestService.swift in Sources */,
 				B1D05505264AEEB100E3F62A /* UIStoryboard+Additions.swift in Sources */,
 				B1D0551F264AF7F400E3F62A /* Presenter.swift in Sources */,
@@ -636,6 +671,8 @@
 				B1AA4681264C9B86001028E5 /* Encodable+Additions.swift in Sources */,
 				B1D0558D264B0E3300E3F62A /* Array+Additions.swift in Sources */,
 				B1D05573264B0B6F00E3F62A /* APIResponse.swift in Sources */,
+				B10191CE264D550B00DCA35A /* ImageViewController.swift in Sources */,
+				B10191D3264D55BF00DCA35A /* ImagePresenter.swift in Sources */,
 				B1D055BC264B10FF00E3F62A /* RestArrayResponse.swift in Sources */,
 				B1D05578264B0B9200E3F62A /* Service.swift in Sources */,
 				B1AA447B264C8909001028E5 /* ImageCell.swift in Sources */,
@@ -644,7 +681,9 @@
 				B1D055FE264B20A500E3F62A /* ImagesInteractor.swift in Sources */,
 				B1D055AC264B100F00E3F62A /* Dictionary+Additions.swift in Sources */,
 				B1D0557E264B0C0100E3F62A /* RestAPI.swift in Sources */,
+				B1FEA070264D759500AFAD9D /* CreateImageTask.swift in Sources */,
 				B1B35D89264C6D2E0087C252 /* GetImagesTask.swift in Sources */,
+				B10191DB264D56AF00DCA35A /* ImageRouter.swift in Sources */,
 				B1AD5D22264C760400F89918 /* ImagePresentation.swift in Sources */,
 				B1D05584264B0C6600E3F62A /* HTTPTask.swift in Sources */,
 				B1D055B7264B10F100E3F62A /* RestResponse.swift in Sources */,
@@ -654,6 +693,7 @@
 				B1D05552264B095B00E3F62A /* String+Additions.swift in Sources */,
 				B1D055F9264B1FBA00E3F62A /* Interactor.swift in Sources */,
 				B1AA4481264C8A81001028E5 /* ImageCellPresenter.swift in Sources */,
+				B10191E0264D57E400DCA35A /* ImageInteractor.swift in Sources */,
 				B1D0556E264B0B2000E3F62A /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

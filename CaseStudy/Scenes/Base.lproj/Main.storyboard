@@ -37,12 +37,86 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="132"/>
+            <point key="canvasLocation" x="-588" y="46"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="nCV-O7-c9H">
+            <objects>
+                <viewController storyboardIdentifier="Image" id="Ygd-80-fBu" customClass="ImageViewController" customModule="CaseStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MH4-8w-0Jf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58e-hS-ugt">
+                                <rect key="frame" x="16" y="60" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hRf-IM-i1Z">
+                                <rect key="frame" x="16" y="102" width="382" height="172.5"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oSg-oX-EkR">
+                                <rect key="frame" x="41.5" y="282.5" width="331" height="331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oSg-oX-EkR" secondAttribute="height" multiplier="1:1" id="CSC-jy-lyU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmM-PT-HXJ">
+                                <rect key="frame" x="125.5" y="802" width="163" height="44"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xof-wa-j4t"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="32" minY="0.0" maxX="32" maxY="0.0"/>
+                                <state key="normal" title="Choose Image">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseButtonDidTap" destination="Ygd-80-fBu" eventType="touchDragOutside" id="tb0-0z-O3Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="co1-4d-Hel"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oSg-oX-EkR" firstAttribute="centerX" secondItem="MH4-8w-0Jf" secondAttribute="centerX" id="5jx-Ue-a8l"/>
+                            <constraint firstItem="co1-4d-Hel" firstAttribute="bottom" secondItem="nmM-PT-HXJ" secondAttribute="bottom" constant="16" id="5vZ-lV-76z"/>
+                            <constraint firstItem="58e-hS-ugt" firstAttribute="leading" secondItem="co1-4d-Hel" secondAttribute="leading" constant="16" id="CkI-ti-2mK"/>
+                            <constraint firstItem="hRf-IM-i1Z" firstAttribute="leading" secondItem="co1-4d-Hel" secondAttribute="leading" constant="16" id="Iz0-2a-3BN"/>
+                            <constraint firstItem="oSg-oX-EkR" firstAttribute="width" secondItem="MH4-8w-0Jf" secondAttribute="width" multiplier="0.8" id="RTr-Ov-o5B"/>
+                            <constraint firstItem="58e-hS-ugt" firstAttribute="top" secondItem="co1-4d-Hel" secondAttribute="top" constant="16" id="SXv-VG-ZEb"/>
+                            <constraint firstItem="oSg-oX-EkR" firstAttribute="top" secondItem="hRf-IM-i1Z" secondAttribute="bottom" constant="8" id="VBh-0D-MkY"/>
+                            <constraint firstItem="oSg-oX-EkR" firstAttribute="centerY" secondItem="MH4-8w-0Jf" secondAttribute="centerY" id="Zxb-yL-HHX"/>
+                            <constraint firstItem="nmM-PT-HXJ" firstAttribute="centerX" secondItem="MH4-8w-0Jf" secondAttribute="centerX" id="fsv-Tr-2mg"/>
+                            <constraint firstItem="co1-4d-Hel" firstAttribute="trailing" secondItem="58e-hS-ugt" secondAttribute="trailing" constant="16" id="g5R-Yo-b4n"/>
+                            <constraint firstItem="co1-4d-Hel" firstAttribute="trailing" secondItem="hRf-IM-i1Z" secondAttribute="trailing" constant="16" id="qbW-4q-D89"/>
+                            <constraint firstItem="hRf-IM-i1Z" firstAttribute="top" secondItem="58e-hS-ugt" secondAttribute="bottom" constant="8" id="rqm-kS-Ru9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="nmM-PT-HXJ" id="Ke6-Q5-Knj"/>
+                        <outlet property="descriptionTextView" destination="hRf-IM-i1Z" id="gaA-f4-dVp"/>
+                        <outlet property="imageView" destination="oSg-oX-EkR" id="rO7-Df-GKv"/>
+                        <outlet property="titleTextField" destination="58e-hS-ugt" id="rEY-21-5lU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rsg-wA-y1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="46"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

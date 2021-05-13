@@ -14,6 +14,7 @@ private struct Constants {
 public protocol ImagesPresenterProtocol: Presenter {
     var numberOfItems: Int { get }
     
+    func addBarButtonDidTap()
     func delete(at indexPath: IndexPath)
     func didSelect(at indexPath: IndexPath)
     func image(at indexPath: IndexPath) -> ImagePresentation
@@ -45,6 +46,10 @@ extension ImagesPresenter: ImagesPresenterProtocol {
         return presentation.images.count
     }
     
+    public func addBarButtonDidTap() {
+        router.navigateToImageViewController(with: nil)
+    }
+    
     public func didSelect(at indexPath: IndexPath) {
         router.navigateToImageViewController(with: image(at: indexPath).id)
     }
@@ -59,8 +64,12 @@ extension ImagesPresenter: ImagesPresenterProtocol {
     
     public func viewDidLoad() {
         view?.prepareTableView()
+        view?.prepareAddBarButton()
         view?.setTableViewVisibility(isHidden: true)
         view?.setTitle(with: Constants.title)
+    }
+    
+    public func viewWillAppear() {
         interactor.images(page: page)
     }
     
