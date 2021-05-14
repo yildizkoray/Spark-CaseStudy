@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UIScrollView_InfiniteScroll
 
 private struct Constants {
     static let contentInsetsForTableView = UIEdgeInsets(top: 10.0, left: .zero, bottom: 10.0, right: .zero)
@@ -58,6 +59,7 @@ extension ImagesViewController: ImagesViewProtocol {
         tableView.deleteRows(at: [indexPath], with: .left)
         tableView.endUpdates()
     }
+    
     public func prepareTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -65,6 +67,15 @@ extension ImagesViewController: ImagesViewProtocol {
                            forCellReuseIdentifier: String(describing: ImageCell.self))
         tableView.contentInset = Constants.contentInsetsForTableView
         tableView.addRefresher(selector: #selector(refresh))
+        
+        tableView.addInfiniteScroll { [unowned self] _ in
+            self.presenter.next()
+            tableView.finishInfiniteScroll()
+        }
+        
+        tableView.setShouldShowInfiniteScrollHandler { [unowned self] _ -> Bool in
+            return presenter.hasNextPage
+        }
     }
     
     public func prepareAddBarButton() {

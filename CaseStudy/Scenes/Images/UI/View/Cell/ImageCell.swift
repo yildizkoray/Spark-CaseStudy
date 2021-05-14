@@ -30,6 +30,11 @@ public final class ImageCell: UITableViewCell {
             presenter.load()
         }
     }
+    
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        imageImageView.image = nil
+    }
 }
 
 // MARK: - ImageCellProtocol

@@ -21,6 +21,7 @@
 		B1632675264AEBDE004A42FC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1632674264AEBDE004A42FC /* Alamofire */; };
 		B163267B264AEBFF004A42FC /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = B163267A264AEBFF004A42FC /* AlamofireImage */; };
 		B1685E1D264E5B1F00771750 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1685E1C264E5B1F00771750 /* InfoPlist.strings */; };
+		B1685E26264E7F0B00771750 /* UIScrollView_InfiniteScroll in Frameworks */ = {isa = PBXBuildFile; productRef = B1685E25264E7F0B00771750 /* UIScrollView_InfiniteScroll */; };
 		B1AA447B264C8909001028E5 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA4479264C8909001028E5 /* ImageCell.swift */; };
 		B1AA447C264C8909001028E5 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1AA447A264C8909001028E5 /* ImageCell.xib */; };
 		B1AA4481264C8A81001028E5 /* ImageCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA4480264C8A81001028E5 /* ImageCellPresenter.swift */; };
@@ -152,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1685E26264E7F0B00771750 /* UIScrollView_InfiniteScroll in Frameworks */,
 				B1632675264AEBDE004A42FC /* Alamofire in Frameworks */,
 				B163267B264AEBFF004A42FC /* AlamofireImage in Frameworks */,
 			);
@@ -556,6 +558,7 @@
 			packageProductDependencies = (
 				B1632674264AEBDE004A42FC /* Alamofire */,
 				B163267A264AEBFF004A42FC /* AlamofireImage */,
+				B1685E25264E7F0B00771750 /* UIScrollView_InfiniteScroll */,
 			);
 			productName = CaseStudy;
 			productReference = B1632609264AE650004A42FC /* CaseStudy.app */;
@@ -631,6 +634,7 @@
 			packageReferences = (
 				B1632673264AEBDE004A42FC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B1632679264AEBFF004A42FC /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				B1685E24264E7F0B00771750 /* XCRemoteSwiftPackageReference "UIScrollView-InfiniteScroll" */,
 			);
 			productRefGroup = B163260A264AE650004A42FC /* Products */;
 			projectDirPath = "";
@@ -1081,6 +1085,14 @@
 				version = 4.2.0;
 			};
 		};
+		B1685E24264E7F0B00771750 /* XCRemoteSwiftPackageReference "UIScrollView-InfiniteScroll" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pronebird/UIScrollView-InfiniteScroll.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1093,6 +1105,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B1632679264AEBFF004A42FC /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
+		};
+		B1685E25264E7F0B00771750 /* UIScrollView_InfiniteScroll */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1685E24264E7F0B00771750 /* XCRemoteSwiftPackageReference "UIScrollView-InfiniteScroll" */;
+			productName = UIScrollView_InfiniteScroll;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

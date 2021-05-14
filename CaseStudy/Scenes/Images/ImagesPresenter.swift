@@ -13,12 +13,14 @@ private struct Constants {
 
 public protocol ImagesPresenterProtocol: Presenter {
     var numberOfItems: Int { get }
+    var hasNextPage: Bool { get }
     
     func addBarButtonDidTap()
     func delete(at indexPath: IndexPath)
     func didSelect(at indexPath: IndexPath)
     func image(at indexPath: IndexPath) -> ImagePresentation
     func refresh()
+    func next()
 }
 
 public final class ImagesPresenter {
@@ -30,6 +32,7 @@ public final class ImagesPresenter {
     var presentation: ImagesPresentation = .empty
     
     private var page: Int = .zero
+    public var hasNextPage: Bool = false
     
     public init(view: ImagesViewProtocol?, router: ImagesRouterProtocol, interactor: ImagesInteractorProtocol) {
         self.view = view
@@ -74,7 +77,11 @@ extension ImagesPresenter: ImagesPresenterProtocol {
     }
     
     public func refresh() {
+        page = .zero
         interactor.images(page: .zero)
+    }
+    public func next() {
+        interactor.next(page: page)
     }
 }
 
@@ -97,11 +104,25 @@ extension ImagesPresenter: ImagesInteractorDelegate {
     public func handleImages(_ result: NetworkResult<RestArrayResponse<Image>>) {
         switch result {
         case .success(let response):
-            page = response.hasNextPage ? page + 1 : page
+            hasNextPage = response.hasNextPage
+            page = hasNextPage ? page + 1 : page
             presentation = ImagesPresentation(images: response.data)
             view?.setTableViewVisibility(isHidden: false)
             view?.reloadTableView()
             view?.endRefreshing()
+            
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+    
+    public func handleNext(_ result: NetworkResult<RestArrayResponse<Image>>) {
+        switch result {
+        case .success(let response):
+            hasNextPage = response.hasNextPage
+            page = hasNextPage ? page + 1 : page
+            presentation.images.append(contentsOf: response.data.compactMap(ImagePresentation.init))
+            view?.reloadTableView()
             
         case .failure(let error):
             print(error.localizedDescription)
