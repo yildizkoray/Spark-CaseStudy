@@ -74,6 +74,7 @@ extension ImagesPresenter: ImagesPresenterProtocol {
     }
     
     public func viewWillAppear() {
+        page = .zero
         interactor.images(page: .zero)
     }
     
