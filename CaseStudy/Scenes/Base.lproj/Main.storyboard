@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,9 +76,38 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="chooseButtonDidTap" destination="Ygd-80-fBu" eventType="touchDragOutside" id="tb0-0z-O3Z"/>
+                                    <action selector="chooseButtonDidTap" destination="Ygd-80-fBu" eventType="touchUpInside" id="Yxv-5A-9WW"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="dsh-by-dBu">
+                                <rect key="frame" x="106" y="621.5" width="202" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-ex-Qps" userLabel="Rotate Right">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="gcX-65-PMt"/>
+                                        </constraints>
+                                        <state key="normal" title="Rotate" image="rotateLeftIcon">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rotateToLeftButtonDidTap" destination="Ygd-80-fBu" eventType="touchUpInside" id="Wgd-HP-YkI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo3-SM-R2J" userLabel="Rotate Left">
+                                        <rect key="frame" x="125" y="0.0" width="77" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="eCG-Q6-H8S"/>
+                                        </constraints>
+                                        <state key="normal" title="Rotate" image="rotateRightIcon">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rotateToRightButtonDidTap" destination="Ygd-80-fBu" eventType="touchUpInside" id="zSG-3S-mIU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="co1-4d-Hel"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,8 +118,10 @@
                             <constraint firstItem="hRf-IM-i1Z" firstAttribute="leading" secondItem="co1-4d-Hel" secondAttribute="leading" constant="16" id="Iz0-2a-3BN"/>
                             <constraint firstItem="oSg-oX-EkR" firstAttribute="width" secondItem="MH4-8w-0Jf" secondAttribute="width" multiplier="0.8" id="RTr-Ov-o5B"/>
                             <constraint firstItem="58e-hS-ugt" firstAttribute="top" secondItem="co1-4d-Hel" secondAttribute="top" constant="16" id="SXv-VG-ZEb"/>
+                            <constraint firstItem="dsh-by-dBu" firstAttribute="top" secondItem="oSg-oX-EkR" secondAttribute="bottom" constant="8" id="SfI-p2-4Px"/>
                             <constraint firstItem="oSg-oX-EkR" firstAttribute="top" secondItem="hRf-IM-i1Z" secondAttribute="bottom" constant="8" id="VBh-0D-MkY"/>
                             <constraint firstItem="oSg-oX-EkR" firstAttribute="centerY" secondItem="MH4-8w-0Jf" secondAttribute="centerY" id="Zxb-yL-HHX"/>
+                            <constraint firstItem="dsh-by-dBu" firstAttribute="centerX" secondItem="MH4-8w-0Jf" secondAttribute="centerX" id="dEH-pU-PMK"/>
                             <constraint firstItem="nmM-PT-HXJ" firstAttribute="centerX" secondItem="MH4-8w-0Jf" secondAttribute="centerX" id="fsv-Tr-2mg"/>
                             <constraint firstItem="co1-4d-Hel" firstAttribute="trailing" secondItem="58e-hS-ugt" secondAttribute="trailing" constant="16" id="g5R-Yo-b4n"/>
                             <constraint firstItem="co1-4d-Hel" firstAttribute="trailing" secondItem="hRf-IM-i1Z" secondAttribute="trailing" constant="16" id="qbW-4q-D89"/>
@@ -109,6 +141,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="rotateLeftIcon" width="24" height="24"/>
+        <image name="rotateRightIcon" width="24" height="24"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

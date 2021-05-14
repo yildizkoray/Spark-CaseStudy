@@ -9,7 +9,7 @@ import Foundation
 
 public protocol ImageInteractorProtocol: AnyObject {
     func image(with id: String)
-    func create()
+    func create(title: String, description: String, imageBase64String: String)
     func update(id: String, title: String, description: String)
 }
 
@@ -26,9 +26,10 @@ public final class ImageInteractor: Interactor {
 // MARK: - ImageInteractorProtocol
 extension ImageInteractor: ImageInteractorProtocol {
     
-    public func create() {
-        service.execute(task: GetImageTask(id: ""), type: RestObjectResponse<Image>.self) { [weak self] response in
-            self?.output?.handleImage(response)
+    public func create(title: String, description: String, imageBase64String: String) {
+        let task = CreateImageTask(title: title, description: description, imageBase64String: imageBase64String)
+        service.execute(task: task, type: RestObjectResponse<Image>.self) { [weak self] response in
+            self?.output?.handleCreate(response)
         }
     }
     

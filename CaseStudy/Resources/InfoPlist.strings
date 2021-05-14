@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  CaseStudy
+
+  Created by Koray Yıldız on 14.05.2021.
+  
+*/
+
+"NSCameraUsageDescription" = "Camera is needed to capture the image of your photo";

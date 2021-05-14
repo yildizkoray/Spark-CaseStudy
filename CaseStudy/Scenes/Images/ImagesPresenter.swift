@@ -70,7 +70,7 @@ extension ImagesPresenter: ImagesPresenterProtocol {
     }
     
     public func viewWillAppear() {
-        interactor.images(page: page)
+        interactor.images(page: .zero)
     }
     
     public func refresh() {

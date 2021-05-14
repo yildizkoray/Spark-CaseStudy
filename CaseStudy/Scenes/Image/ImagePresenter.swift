@@ -38,11 +38,17 @@ extension ImagePresenter: ImagePresenterProtocol {
     }
     
     public func save(title: String?, description: String?, imageBase64Data: String?) {
-        interactor.create()
+        guard let title = title, !title.isEmpty,
+              let description = description, !description.isEmpty,
+              let imageBase64Data = imageBase64Data else { return }
+        interactor.create(title: title,
+                          description: description,
+                          imageBase64String: "data:image/jpeg;base64, \(imageBase64Data)")
     }
     
     public func viewDidLoad() {
         view?.prepareUI()
+        view?.prepareImagePicker()
         if let id = id {
             interactor.image(with: id)
             view?.prepareUpdateBarButton()
@@ -69,7 +75,13 @@ extension ImagePresenter: ImageInteractorDelegate {
     }
     
     public func handleCreate(_ result: NetworkResult<RestObjectResponse<Image>>) {
-        print("handleCreate")
+        switch result {
+        case .success:
+            router.pop(animated: true)
+            
+        case .failure(let error):
+            print(error.description)
+        }
     }
     
     public func handleImage(_ result: NetworkResult<RestObjectResponse<Image>>) {
