@@ -1,0 +1,55 @@
+{
+    "data": [
+        {
+            "status": 1,
+            "title": "Koray",
+            "description": "Yıldız",
+            "createdAt": "2021-05-14T11:23:27.410Z",
+            "updatedAt": "2021-05-14T11:23:27.810Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5daf01b14809885040df/0.png",
+            "id": "609e5daf01b14809885040df"
+        },
+        {
+            "status": 1,
+            "title": "Koray",
+            "description": "Yıldız",
+            "createdAt": "2021-05-14T11:23:26.231Z",
+            "updatedAt": "2021-05-14T11:23:26.694Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5dae01b148da805040de/0.png",
+            "id": "609e5dae01b148da805040de"
+        },
+        {
+            "status": 1,
+            "title": "Koray",
+            "description": "Yıldız",
+            "createdAt": "2021-05-14T11:23:24.709Z",
+            "updatedAt": "2021-05-14T11:23:25.180Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5dac01b14818db5040dd/0.png",
+            "id": "609e5dac01b14818db5040dd"
+        },
+        {
+            "status": 1,
+            "title": "Koray",
+            "description": "Yıldız",
+            "createdAt": "2021-05-14T11:23:23.437Z",
+            "updatedAt": "2021-05-14T11:23:23.820Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5dab01b1484c7c5040dc/0.png",
+            "id": "609e5dab01b1484c7c5040dc"
+        },
+        {
+            "status": 1,
+            "title": "Koray",
+            "description": "Yıldız",
+            "createdAt": "2021-05-14T11:23:22.006Z",
+            "updatedAt": "2021-05-14T11:23:22.425Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5daa01b14894c35040db/0.png",
+            "id": "609e5daa01b14894c35040db"
+        }
+    ],
+    "meta": {
+        "nextPage": false
+    },
+    "error": null
+}
+
+

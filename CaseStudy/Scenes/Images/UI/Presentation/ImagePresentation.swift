@@ -21,5 +21,12 @@ public struct ImagePresentation {
     }
 }
 
+// MARK: - Equatable
+extension ImagePresentation: Equatable {
+    public static func ==(lhs: ImagePresentation, rhs: ImagePresentation) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 
 

@@ -13,14 +13,15 @@ private struct Constants {
 
 public protocol ImagesPresenterProtocol: Presenter {
     var numberOfItems: Int { get }
+    var page: Int { get }
     var hasNextPage: Bool { get }
     
     func addBarButtonDidTap()
     func delete(at indexPath: IndexPath)
     func didSelect(at indexPath: IndexPath)
     func image(at indexPath: IndexPath) -> ImagePresentation
-    func refresh()
     func next()
+    func refresh()
 }
 
 public final class ImagesPresenter {
@@ -29,9 +30,9 @@ public final class ImagesPresenter {
     private let router: ImagesRouterProtocol
     private let interactor: ImagesInteractorProtocol
     
-    var presentation: ImagesPresentation = .empty
+    private(set) var presentation: ImagesPresentation = .empty
     
-    private var page: Int = .zero
+    public var page: Int = .zero
     public var hasNextPage: Bool = false
     
     public init(view: ImagesViewProtocol?, router: ImagesRouterProtocol, interactor: ImagesInteractorProtocol) {
@@ -80,6 +81,7 @@ extension ImagesPresenter: ImagesPresenterProtocol {
         page = .zero
         interactor.images(page: .zero)
     }
+    
     public func next() {
         interactor.next(page: page)
     }

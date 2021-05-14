@@ -7,7 +7,7 @@
 
 import Alamofire
 
-public final class RestService: Service {
+public class RestService: Service {
     
     public typealias Backend = RestAPI
     
@@ -16,7 +16,7 @@ public final class RestService: Service {
     private(set) public var backend: RestAPI
     private var operations: [String: DataRequest]
     
-    public init(backend: RestAPI) {
+    required public init(backend: RestAPI) {
         self.backend = backend
         self.operations = [String: DataRequest]()
         self.cancelsPreviousOperations = true
@@ -39,7 +39,7 @@ public final class RestService: Service {
                 else {
                     completion(.success(response.value!))
                 }
-            case .failure(let error):
+            case .failure:
                 completion(.failure(.afError))
             }
         }
