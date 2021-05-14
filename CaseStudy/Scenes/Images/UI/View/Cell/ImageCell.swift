@@ -24,6 +24,11 @@ public final class ImageCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
+    
     
     public var presenter: ImageCellPresenterProtocol! {
         didSet {
