@@ -2,48 +2,48 @@
     "data": [
         {
             "status": 1,
-            "title": "Koray",
-            "description": "Yıldız",
-            "createdAt": "2021-05-14T11:23:27.410Z",
-            "updatedAt": "2021-05-14T11:23:27.810Z",
-            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5daf01b14809885040df/0.png",
-            "id": "609e5daf01b14809885040df"
+            "title": "Fethiye ",
+            "description": "Fethiye is a city and district of Muğla Province in the Aegean Region of Turkey. It is one of the prominent tourist destinations in the Turkish Riviera.",
+            "createdAt": "2021-05-14T09:38:12.618Z",
+            "updatedAt": "2021-05-14T09:38:13.162Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e45049795bea6f0c4d129/0.png",
+            "id": "609e45049795bea6f0c4d129"
         },
         {
             "status": 1,
-            "title": "Koray",
-            "description": "Yıldız",
-            "createdAt": "2021-05-14T11:23:26.231Z",
-            "updatedAt": "2021-05-14T11:23:26.694Z",
-            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5dae01b148da805040de/0.png",
-            "id": "609e5dae01b148da805040de"
+            "title": "Cunda",
+            "description": "Cunda, is a beautiful Turkish island in the northern Aegean Sea, a place where the endless blue and eternity of the sea covers the visitors, where the calm green of pine and olive trees encircles the guests.",
+            "createdAt": "2021-05-14T09:04:05.940Z",
+            "updatedAt": "2021-05-14T09:04:06.551Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e3d059795be0720c4d126/0.png",
+            "id": "609e3d059795be0720c4d126"
         },
         {
             "status": 1,
-            "title": "Koray",
-            "description": "Yıldız",
-            "createdAt": "2021-05-14T11:23:24.709Z",
-            "updatedAt": "2021-05-14T11:23:25.180Z",
-            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5dac01b14818db5040dd/0.png",
-            "id": "609e5dac01b14818db5040dd"
+            "title": "Istanbul",
+            "description": "Istanbul, historically known as Byzantium and Constantinople, is the largest city in Turkey and the country's economic, cultural and historic center.",
+            "createdAt": "2021-05-14T07:49:58.309Z",
+            "updatedAt": "2021-05-14T09:06:57.138Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e2ba60962976c6e5ec888/0.png",
+            "id": "609e2ba60962976c6e5ec888"
         },
         {
             "status": 1,
-            "title": "Koray",
-            "description": "Yıldız",
-            "createdAt": "2021-05-14T11:23:23.437Z",
-            "updatedAt": "2021-05-14T11:23:23.820Z",
-            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5dab01b1484c7c5040dc/0.png",
-            "id": "609e5dab01b1484c7c5040dc"
+            "title": "Kekova",
+            "description": "Kekova, also named Caravola (Greek: Dolichiste), is a small Turkish island near Demre (Demre is the Lycian town of Myra) district of Antalya province which faces the villages of Kaleköy (ancient Simena) and Üçağız (ancient Teimioussa).",
+            "createdAt": "2021-05-14T07:02:24.588Z",
+            "updatedAt": "2021-05-14T08:59:29.606Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e2080096297665d5ec887/0.png",
+            "id": "609e2080096297665d5ec887"
         },
         {
             "status": 1,
-            "title": "Koray",
-            "description": "Yıldız",
-            "createdAt": "2021-05-14T11:23:22.006Z",
-            "updatedAt": "2021-05-14T11:23:22.425Z",
-            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e5daa01b14894c35040db/0.png",
-            "id": "609e5daa01b14894c35040db"
+            "title": "Salda",
+            "description": "Lake Salda is a mid-size crater lake in southwestern Turkey, within the boundaries of Yeşilova district of Burdur Province.",
+            "createdAt": "2021-05-14T06:55:21.374Z",
+            "updatedAt": "2021-05-14T06:55:22.011Z",
+            "imageUrl": "https://homesofturkey-content.s3.eu-central-1.amazonaws.com/koray/609e1ed9096297a64e5ec886/0.png",
+            "id": "609e1ed9096297a64e5ec886"
         }
     ],
     "meta": {

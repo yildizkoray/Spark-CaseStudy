@@ -123,7 +123,7 @@ public final class ImagesPresenterTests: XCTestCase {
         XCTAssertTrue(mockRouter.invokedNavigateToImageViewController)
         XCTAssertEqual(mockRouter.invokedNavigateToImageViewControllerCount, 1)
         XCTAssertNotNil(mockRouter.invokedNavigateToImageViewControllerParameters)
-        XCTAssertEqual(mockRouter.invokedNavigateToImageViewControllerParameters?.id, "609e5daf01b14809885040df")
+        XCTAssertEqual(mockRouter.invokedNavigateToImageViewControllerParameters?.id, "609e45049795bea6f0c4d129")
     }
     
     func test_delete_InvokedRequiredRouterMethods() {
@@ -142,7 +142,7 @@ public final class ImagesPresenterTests: XCTestCase {
         XCTAssertTrue(mockInteractor.invokedDelete)
         XCTAssertEqual(mockInteractor.invokedDeleteCount, 1)
         XCTAssertNotNil(mockInteractor.invokedDeleteParameters)
-        XCTAssertEqual(mockInteractor.invokedDeleteParameters?.id, "609e5daf01b14809885040df")
+        XCTAssertEqual(mockInteractor.invokedDeleteParameters?.id, "609e45049795bea6f0c4d129")
     }
     
     func test_numberOfItems_InvokedRequiredRouterMethods() {

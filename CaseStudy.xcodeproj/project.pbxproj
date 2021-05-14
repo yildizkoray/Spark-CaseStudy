@@ -41,6 +41,8 @@
 		B1AD5D2F264C7A3600F89918 /* ImagesPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD5D2E264C7A3600F89918 /* ImagesPresentation.swift */; };
 		B1B35D80264C6CDE0087C252 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B35D7F264C6CDE0087C252 /* Image.swift */; };
 		B1B35D89264C6D2E0087C252 /* GetImagesTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B35D88264C6D2E0087C252 /* GetImagesTask.swift */; };
+		B1CDFB9E264EFE4200D2247A /* MockImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDFB9D264EFE4200D2247A /* MockImageCell.swift */; };
+		B1CDFBA6264EFE8000D2247A /* ImageCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDFBA5264EFE8000D2247A /* ImageCellPresenterTests.swift */; };
 		B1D054FC264AEE2E00E3F62A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D054FB264AEE2E00E3F62A /* ViewController.swift */; };
 		B1D05505264AEEB100E3F62A /* UIStoryboard+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05504264AEEB100E3F62A /* UIStoryboard+Additions.swift */; };
 		B1D0550D264AEF0500E3F62A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0550C264AEF0400E3F62A /* Router.swift */; };
@@ -133,6 +135,8 @@
 		B1AD5D2E264C7A3600F89918 /* ImagesPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPresentation.swift; sourceTree = "<group>"; };
 		B1B35D7F264C6CDE0087C252 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B1B35D88264C6D2E0087C252 /* GetImagesTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImagesTask.swift; sourceTree = "<group>"; };
+		B1CDFB9D264EFE4200D2247A /* MockImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageCell.swift; sourceTree = "<group>"; };
+		B1CDFBA5264EFE8000D2247A /* ImageCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellPresenterTests.swift; sourceTree = "<group>"; };
 		B1D054FB264AEE2E00E3F62A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B1D05504264AEEB100E3F62A /* UIStoryboard+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Additions.swift"; sourceTree = "<group>"; };
 		B1D0550C264AEF0400E3F62A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -408,6 +412,15 @@
 			path = Task;
 			sourceTree = "<group>";
 		};
+		B1CDFB9C264EFE2F00D2247A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B1CDFB9D264EFE4200D2247A /* MockImageCell.swift */,
+				B1CDFBA5264EFE8000D2247A /* ImageCellPresenterTests.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B1D05500264AEE6100E3F62A /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +463,7 @@
 		B1D05530264B047900E3F62A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B1CDFB9C264EFE2F00D2247A /* Cell */,
 				B1D0552B264B016500E3F62A /* ImagesPresenterTests.swift */,
 				B1685E2A264E8BD900771750 /* MockImagesInteractor.swift */,
 				B1D05537264B048500E3F62A /* MockImagesRouter.swift */,
@@ -799,6 +813,8 @@
 				B18515BE264EC55400FF0492 /* ImagePresenterTests.swift in Sources */,
 				B18515B5264EC53F00FF0492 /* MockImageRouter.swift in Sources */,
 				B18515C3264EC55600FF0492 /* MockImageInteractor.swift in Sources */,
+				B1CDFB9E264EFE4200D2247A /* MockImageCell.swift in Sources */,
+				B1CDFBA6264EFE8000D2247A /* ImageCellPresenterTests.swift in Sources */,
 				B18515C8264EC55800FF0492 /* MockImageView.swift in Sources */,
 				B1685E2B264E8BD900771750 /* MockImagesInteractor.swift in Sources */,
 				B1D05538264B048500E3F62A /* MockImagesRouter.swift in Sources */,
