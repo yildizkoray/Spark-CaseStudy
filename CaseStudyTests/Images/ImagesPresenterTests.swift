@@ -134,7 +134,7 @@ public final class ImagesPresenterTests: XCTestCase {
 
         let indexPath = IndexPath(row: .zero, section: .zero)
         presenter.viewWillAppear()
-        mockDataProvider.fileName = "DeletedImages"
+        mockDataProvider.fileName = "DeletedImage"
         presenter.delete(at: indexPath)
 
 
@@ -182,6 +182,6 @@ public final class ImagesPresenterTests: XCTestCase {
         mockDataProvider.fileName = "Images_HasNextPage_False"
         presenter.viewWillAppear()
         
-        XCTAssertEqual(presenter.page, .zero)
+        XCTAssertEqual(presenter.page, .zero, "has next page false but page increased")
     }
 }

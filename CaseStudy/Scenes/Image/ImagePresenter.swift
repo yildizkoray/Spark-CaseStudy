@@ -40,7 +40,7 @@ extension ImagePresenter: ImagePresenterProtocol {
     public func save(title: String?, description: String?, imageBase64Data: String?) {
         guard let title = title, !title.isEmpty,
               let description = description, !description.isEmpty,
-              let imageBase64Data = imageBase64Data else { return }
+              let imageBase64Data = imageBase64Data, !imageBase64Data.isEmpty else { return }
         interactor.create(title: title,
                           description: description,
                           imageBase64String: "data:image/jpeg;base64, \(imageBase64Data)")

@@ -5,8 +5,8 @@
 //  Created by Koray Yıldız on 14.05.2021.
 //
 
-@testable import CaseStudy
 import Foundation
+@testable import CaseStudy
 
 public final class MockDataProvider: RestService {
     var fileName: String = "Images"
@@ -19,7 +19,6 @@ public final class MockDataProvider: RestService {
         } else {
             completion(.success(result))
         }
-        
     }
     
     public func decodeJSON<T: Decodable>(type: T.Type, fileName: String) -> T {
