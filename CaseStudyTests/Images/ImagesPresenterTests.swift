@@ -53,16 +53,16 @@ public final class ImagesPresenterTests: XCTestCase {
         
         XCTAssertTrue(mockView.invokedSetTableViewVisibility)
         XCTAssertNotNil(mockView.invokedSetTableViewVisibilityParameters)
-        XCTAssertEqual(mockView.invokedSetTableViewVisibilityParameters?.isHidden, true)
+        XCTAssertEqual(mockView.invokedSetTableViewVisibilityParameters?.isHidden, false)
     }
     
-    func test_viewWillAppear_InvokedRequiredInteractorMethods() {
+    func test_viewDidLoad_InvokedRequiredInteractorMethods() {
         XCTAssertFalse(mockInteractor.invokedImages)
         XCTAssertEqual(mockInteractor.invokedImagesCount, .zero)
         XCTAssertNil(mockInteractor.invokedImagesParameters)
-        
-        presenter.viewWillAppear()
-        
+
+        presenter.viewDidLoad()
+
         XCTAssertTrue(mockInteractor.invokedImages)
         XCTAssertEqual(mockInteractor.invokedImagesCount, 1)
         XCTAssertNotNil(mockInteractor.invokedImagesParameters)
@@ -116,7 +116,7 @@ public final class ImagesPresenterTests: XCTestCase {
         
         
         let indexPath = IndexPath(row: .zero, section: .zero)
-        presenter.viewWillAppear()
+        presenter.viewDidLoad()
         presenter.didSelect(at: indexPath)
         
         
@@ -126,14 +126,14 @@ public final class ImagesPresenterTests: XCTestCase {
         XCTAssertEqual(mockRouter.invokedNavigateToImageViewControllerParameters?.id, "609e45049795bea6f0c4d129")
     }
     
-    func test_delete_InvokedRequiredRouterMethods() {
+    func test_delete_InvokedRequiredInteractorMethods() {
         XCTAssertFalse(mockInteractor.invokedDelete)
         XCTAssertEqual(mockInteractor.invokedDeleteCount, .zero)
         XCTAssertNil(mockInteractor.invokedDeleteParameters)
 
 
         let indexPath = IndexPath(row: .zero, section: .zero)
-        presenter.viewWillAppear()
+        presenter.viewDidLoad()
         mockDataProvider.fileName = "DeletedImage"
         presenter.delete(at: indexPath)
 
@@ -145,33 +145,33 @@ public final class ImagesPresenterTests: XCTestCase {
         XCTAssertEqual(mockInteractor.invokedDeleteParameters?.id, "609e45049795bea6f0c4d129")
     }
     
-    func test_numberOfItems_InvokedRequiredRouterMethods() {
-        presenter.viewWillAppear()
+    func test_numberOfItems_ShouldBeCorrectValue() {
+        presenter.viewDidLoad()
         
-        XCTAssertEqual(presenter.numberOfItems, 5)
+        XCTAssertEqual(presenter.numberOfItems, 5, "Mock json has 5 items, but number of items setted different value")
     }
     
-    func test_image_InvokedRequiredRouterMethods() {
+    func test_image_ShouldeSelectCorrectItem() {
         let indexPath = IndexPath(row: .zero, section: .zero)
         
-        presenter.viewWillAppear()
+        presenter.viewDidLoad()
         
         XCTAssertEqual(presenter.image(at: indexPath), presenter.presentation.images.first)
     }
     
-    func test_page_PageNumberIncreasedWhenRequestSucces() {
+    func test_page_PageNumberIncrease_WhenRequestSucces() {
         XCTAssertEqual(presenter.page, .zero)
         
-        presenter.viewWillAppear()
+        presenter.viewDidLoad()
         
         XCTAssertEqual(presenter.page, 1)
     }
     
-    func test_page_PageNumberNotIncreasedWhenRequestFailure() {
+    func test_page_PageNumberNotIncreased_WhenRequestFailure() {
         XCTAssertEqual(presenter.page, .zero)
         
         mockDataProvider.isError = true
-        presenter.viewWillAppear()
+        presenter.viewDidLoad()
         
         XCTAssertEqual(presenter.page, .zero)
     }
@@ -180,7 +180,7 @@ public final class ImagesPresenterTests: XCTestCase {
         XCTAssertEqual(presenter.page, .zero)
         
         mockDataProvider.fileName = "Images_HasNextPage_False"
-        presenter.viewWillAppear()
+        presenter.viewDidLoad()
         
         XCTAssertEqual(presenter.page, .zero, "has next page false but page increased")
     }

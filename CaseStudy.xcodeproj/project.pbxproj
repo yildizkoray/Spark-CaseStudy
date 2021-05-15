@@ -12,6 +12,7 @@
 		B10191DB264D56AF00DCA35A /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10191DA264D56AF00DCA35A /* ImageRouter.swift */; };
 		B10191E0264D57E400DCA35A /* ImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10191DF264D57E400DCA35A /* ImageInteractor.swift */; };
 		B12D11F7264C9DC8003EE280 /* DeleteImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D11F6264C9DC8003EE280 /* DeleteImageTask.swift */; };
+		B143B2F9264F622800610A24 /* MockImagePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143B2F8264F622800610A24 /* MockImagePresenterDelegate.swift */; };
 		B163260D264AE650004A42FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163260C264AE650004A42FC /* AppDelegate.swift */; };
 		B1632611264AE650004A42FC /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1632610264AE650004A42FC /* ImagesViewController.swift */; };
 		B1632614264AE650004A42FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1632612264AE650004A42FC /* Main.storyboard */; };
@@ -103,6 +104,7 @@
 		B10191DA264D56AF00DCA35A /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
 		B10191DF264D57E400DCA35A /* ImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractor.swift; sourceTree = "<group>"; };
 		B12D11F6264C9DC8003EE280 /* DeleteImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageTask.swift; sourceTree = "<group>"; };
+		B143B2F8264F622800610A24 /* MockImagePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagePresenterDelegate.swift; sourceTree = "<group>"; };
 		B1632609264AE650004A42FC /* CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaseStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B163260C264AE650004A42FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1632610264AE650004A42FC /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				B18515B4264EC53F00FF0492 /* MockImageRouter.swift */,
 				B18515C7264EC55800FF0492 /* MockImageView.swift */,
 				B18515E5264ED35B00FF0492 /* Responses */,
+				B143B2F8264F622800610A24 /* MockImagePresenterDelegate.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 			files = (
 				B18515BE264EC55400FF0492 /* ImagePresenterTests.swift in Sources */,
 				B18515B5264EC53F00FF0492 /* MockImageRouter.swift in Sources */,
+				B143B2F9264F622800610A24 /* MockImagePresenterDelegate.swift in Sources */,
 				B18515C3264EC55600FF0492 /* MockImageInteractor.swift in Sources */,
 				B1CDFB9E264EFE4200D2247A /* MockImageCell.swift in Sources */,
 				B1CDFBA6264EFE8000D2247A /* ImageCellPresenterTests.swift in Sources */,

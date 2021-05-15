@@ -22,13 +22,13 @@ public final class MockImagesRouter: ImagesRouterProtocol {
 
     var invokedNavigateToImageViewController = false
     var invokedNavigateToImageViewControllerCount = 0
-    var invokedNavigateToImageViewControllerParameters: (id: String?, Void)?
-    var invokedNavigateToImageViewControllerParametersList = [(id: String?, Void)]()
+    var invokedNavigateToImageViewControllerParameters: (id: String?, delegate: ImagePresenterDelegate)?
+    var invokedNavigateToImageViewControllerParametersList = [(id: String?, delegate: ImagePresenterDelegate)]()
 
-    public func navigateToImageViewController(with id: String?) {
+    public func navigateToImageViewController(with id: String?, delegate: ImagePresenterDelegate) {
         invokedNavigateToImageViewController = true
         invokedNavigateToImageViewControllerCount += 1
-        invokedNavigateToImageViewControllerParameters = (id, ())
-        invokedNavigateToImageViewControllerParametersList.append((id, ()))
+        invokedNavigateToImageViewControllerParameters = (id, delegate)
+        invokedNavigateToImageViewControllerParametersList.append((id, delegate))
     }
 }

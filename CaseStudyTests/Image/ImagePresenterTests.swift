@@ -14,6 +14,7 @@ public final class ImagePresenterTests: XCTestCase {
     private var mockInteractor: MockImageInteractor!
     private var presenter: ImagePresenter!
     private var mockDataProvider: MockDataProvider!
+    private var mockDelegate: MockImagePresenterDelegate!
     
     public override func setUp() {
         reCreate()
@@ -24,9 +25,11 @@ public final class ImagePresenterTests: XCTestCase {
         mockView = MockImageView()
         mockRouter = MockImageRouter()
         mockInteractor = MockImageInteractor(mockDataProvider)
+        mockDelegate = MockImagePresenterDelegate()
         presenter = ImagePresenter(view: mockView,
                                    interactor: mockInteractor,
                                    router: mockRouter,
+                                   delegate: mockDelegate,
                                    id: id)
         mockInteractor.output = presenter
     }

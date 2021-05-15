@@ -51,11 +51,11 @@ extension ImagesPresenter: ImagesPresenterProtocol {
     }
     
     public func addBarButtonDidTap() {
-        router.navigateToImageViewController(with: nil)
+        router.navigateToImageViewController(with: nil, delegate: self)
     }
     
     public func didSelect(at indexPath: IndexPath) {
-        router.navigateToImageViewController(with: image(at: indexPath).id)
+        router.navigateToImageViewController(with: image(at: indexPath).id, delegate: self)
     }
     
     public func image(at indexPath: IndexPath) -> ImagePresentation {
@@ -71,10 +71,6 @@ extension ImagesPresenter: ImagesPresenterProtocol {
         view?.prepareAddBarButton()
         view?.setTableViewVisibility(isHidden: true)
         view?.setTitle(with: Constants.title)
-    }
-    
-    public func viewWillAppear() {
-        page = .zero
         interactor.images(page: .zero)
     }
     
@@ -124,11 +120,30 @@ extension ImagesPresenter: ImagesInteractorDelegate {
         case .success(let response):
             hasNextPage = response.hasNextPage
             page = hasNextPage ? page + 1 : page
-            presentation.images.append(contentsOf: response.data.compactMap(ImagePresentation.init))
+            let imagePresentations = response.data.compactMap(ImagePresentation.init)
+            presentation.images.append(contentsOf: imagePresentations.filter { !presentation.images.contains($0)})
             view?.reloadTableView()
             
         case .failure(let error):
             print(error.localizedDescription)
         }
+    }
+}
+
+// MARK: - ImagePresenterDelegate
+extension ImagesPresenter: ImagePresenterDelegate {
+    
+    public func didUpdateImage(image: Image) {
+        let imagePresentation = ImagePresentation(image: image)
+        guard let index = presentation.images.firstIndex(of: imagePresentation) else { return }
+        presentation.images[index] = imagePresentation
+        let indexPath = IndexPath(row: index, section: .zero)
+        view?.reloadRows(at: indexPath)
+    }
+    
+    public func didSaveImage(image: Image) {
+        let imagePresentation = ImagePresentation(image: image)
+        presentation.images.insert(imagePresentation, at: .zero)
+        view?.insertRow(at: IndexPath(row: .zero, section: .zero))
     }
 }

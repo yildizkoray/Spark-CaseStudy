@@ -7,24 +7,34 @@
 
 import Foundation
 
+public protocol ImagePresenterDelegate: AnyObject {
+    func didSaveImage(image: Image)
+    func didUpdateImage(image: Image)
+}
+
 public protocol ImagePresenterProtocol: Presenter {
     func update(title: String?, description: String?)
     func save(title: String?, description: String?, imageBase64Data: String?)
 }
 
-
 public final class ImagePresenter {
     private weak var view: ImageViewProtocol?
     private let router: ImageRouterProtocol
     private let interactor: ImageInteractorProtocol
+    private weak var delegate: ImagePresenterDelegate?
     
     private let id: String?
     
-    public init(view: ImageViewProtocol, interactor: ImageInteractorProtocol, router: ImageRouterProtocol, id: String?) {
+    public init(view: ImageViewProtocol,
+                interactor: ImageInteractorProtocol,
+                router: ImageRouterProtocol,
+                delegate: ImagePresenterDelegate,
+                id: String?) {
         self.view = view
         self.interactor = interactor
         self.router = router
         self.id = id
+        self.delegate = delegate
     }
 }
 
@@ -66,8 +76,10 @@ extension ImagePresenter: ImagePresenterProtocol {
 extension ImagePresenter: ImageInteractorDelegate {
     public func handleUpdate(_ result: NetworkResult<RestObjectResponse<Image>>) {
         switch result {
-        case .success:
-            router.pop(animated: true)
+        case .success(let response):
+            router.pop(animated: true) { [weak self] in
+                self?.delegate?.didUpdateImage(image: response.data)
+            }
             
         case .failure(let error):
             print(error.description)
@@ -76,8 +88,10 @@ extension ImagePresenter: ImageInteractorDelegate {
     
     public func handleCreate(_ result: NetworkResult<RestObjectResponse<Image>>) {
         switch result {
-        case .success:
-            router.pop(animated: true)
+        case .success(let response):
+            router.pop(animated: true) { [weak self] in
+                self?.delegate?.didSaveImage(image: response.data)
+            }
             
         case .failure(let error):
             print(error.description)

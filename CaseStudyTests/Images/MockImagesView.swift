@@ -30,6 +30,18 @@ public final class MockImagesView: ImagesViewProtocol {
         invokedEndRefreshingCount += 1
     }
 
+    var invokedInsertRow = false
+    var invokedInsertRowCount = 0
+    var invokedInsertRowParameters: (indexPath: IndexPath, Void)?
+    var invokedInsertRowParametersList = [(indexPath: IndexPath, Void)]()
+
+    public func insertRow(at indexPath: IndexPath) {
+        invokedInsertRow = true
+        invokedInsertRowCount += 1
+        invokedInsertRowParameters = (indexPath, ())
+        invokedInsertRowParametersList.append((indexPath, ()))
+    }
+
     var invokedPrepareTableView = false
     var invokedPrepareTableViewCount = 0
 
@@ -44,6 +56,26 @@ public final class MockImagesView: ImagesViewProtocol {
     public func prepareAddBarButton() {
         invokedPrepareAddBarButton = true
         invokedPrepareAddBarButtonCount += 1
+    }
+
+    var invokedRefresh = false
+    var invokedRefreshCount = 0
+
+    public func refresh() {
+        invokedRefresh = true
+        invokedRefreshCount += 1
+    }
+
+    var invokedReloadRows = false
+    var invokedReloadRowsCount = 0
+    var invokedReloadRowsParameters: (indexPath: IndexPath, Void)?
+    var invokedReloadRowsParametersList = [(indexPath: IndexPath, Void)]()
+
+    public func reloadRows(at indexPath: IndexPath) {
+        invokedReloadRows = true
+        invokedReloadRowsCount += 1
+        invokedReloadRowsParameters = (indexPath, ())
+        invokedReloadRowsParametersList.append((indexPath, ()))
     }
 
     var invokedReloadTableView = false
@@ -76,13 +108,5 @@ public final class MockImagesView: ImagesViewProtocol {
         invokedSetTitleCount += 1
         invokedSetTitleParameters = (title, ())
         invokedSetTitleParametersList.append((title, ()))
-    }
-
-    var invokedRefresh = false
-    var invokedRefreshCount = 0
-
-    public func refresh() {
-        invokedRefresh = true
-        invokedRefreshCount += 1
     }
 }

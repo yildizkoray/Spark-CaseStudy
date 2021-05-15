@@ -15,12 +15,14 @@ private struct Constants {
 public protocol ImagesViewProtocol: AnyObject {
     func deleteRow(at indexPath: IndexPath)
     func endRefreshing()
+    func insertRow(at indexPath: IndexPath)
     func prepareTableView()
     func prepareAddBarButton()
+    func refresh()
+    func reloadRows(at indexPath: IndexPath)
     func reloadTableView()
     func setTableViewVisibility(isHidden: Bool)
     func setTitle(with title: String)
-    func refresh()
 }
 
 public final class ImagesViewController: UIViewController, ViewController {
@@ -34,11 +36,6 @@ public final class ImagesViewController: UIViewController, ViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-    }
-    
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presenter.viewWillAppear()
     }
     
     @objc private func addButtonDidTap() {
@@ -57,6 +54,12 @@ extension ImagesViewController: ImagesViewProtocol {
     public func deleteRow(at indexPath: IndexPath) {
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .left)
+        tableView.endUpdates()
+    }
+    
+    public func insertRow(at indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.insertRows(at: [indexPath], with: .left)
         tableView.endUpdates()
     }
     
@@ -86,6 +89,12 @@ extension ImagesViewController: ImagesViewProtocol {
     
     @objc public func refresh() {
         presenter.refresh()
+    }
+    
+    public func reloadRows(at indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        tableView.endUpdates()
     }
     
     public func reloadTableView() {
