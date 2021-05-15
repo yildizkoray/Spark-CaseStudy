@@ -82,9 +82,11 @@ extension ImagesViewController: ImagesViewProtocol {
     }
     
     public func prepareAddBarButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-                                                            target: self,
-                                                            action: #selector(addButtonDidTap))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(addButtonDidTap))
+        addButton.accessibilityIdentifier = AppAccessibilityIdenfier.addButton.rawValue
+        navigationItem.rightBarButtonItem = addButton
     }
     
     @objc public func refresh() {
@@ -125,6 +127,7 @@ extension ImagesViewController: UITableViewDataSource {
         let imagePresentation = presenter.image(at: indexPath)
         let cellPresenter = ImageCellPresenter(view: cell, imagePresentation: imagePresentation)
         cell.presenter = cellPresenter
+        cell.accessibilityIdentifier = (AppAccessibilityIdenfier.imageCell.rawValue + String(indexPath.row))
         return cell
     }
     

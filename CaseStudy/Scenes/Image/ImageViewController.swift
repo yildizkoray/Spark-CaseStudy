@@ -124,17 +124,22 @@ extension ImageViewController: ImageViewProtocol {
     }
     
     public func prepareUpdateBarButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.update,
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(updateBarButtonDidTap))
+        let rightButton = UIBarButtonItem(title: Constants.update,
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(updateBarButtonDidTap))
+        rightButton.accessibilityIdentifier = AppAccessibilityIdenfier.imagePageNavbarUpdateButton.rawValue
+        navigationItem.rightBarButtonItem = rightButton
     }
     
     public func prepareSaveBarButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.save,
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(saveBarButtonDidTap))
+        let rightButton = UIBarButtonItem(title: Constants.save,
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(saveBarButtonDidTap))
+        
+        rightButton.accessibilityIdentifier = AppAccessibilityIdenfier.imagePageNavbarSaveButton.rawValue
+        navigationItem.rightBarButtonItem = rightButton
     }
     
     public func setChooseButtonVisibility(isHidden: Bool) {
