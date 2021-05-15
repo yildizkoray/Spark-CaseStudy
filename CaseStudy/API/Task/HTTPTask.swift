@@ -11,7 +11,7 @@ import Foundation
 private struct Constants {
     struct URLComponents {
         struct Default {
-            static let port = 8081
+            static let port = "8085"
             static let host = "54.78.219.186"
             static let scheme = "http"
         }
@@ -60,7 +60,7 @@ public extension HTTPTask {
         urlComponents.scheme = .SCHEME
         urlComponents.path = "/api/koray/\(path)"
         urlComponents.queryItems = queryParameters
-        urlComponents.port = 8081
+        urlComponents.port = Int(String.PORT)
         return try urlComponents.asURL()
     }
 }
