@@ -252,10 +252,16 @@ public final class ImagePresenterTests: XCTestCase {
         XCTAssertFalse(mockRouter.invokedPop)
         XCTAssertNil(mockRouter.invokedPopParameters)
         XCTAssertEqual(mockRouter.invokedPopCount, .zero)
-        
+        XCTAssertFalse(mockDelegate.invokedDidUpdateImage)
+        XCTAssertNil(mockDelegate.invokedDidUpdateImageParameters)
+
+        mockRouter.shouldInvokePopCompletion = true
         let updatedImage = mockDataProvider.decodeJSON(type: RestObjectResponse<Image>.self, fileName: "UpdatedImage")
         presenter.handleUpdate(.success(updatedImage))
         
+        XCTAssertTrue(mockDelegate.invokedDidUpdateImage)
+        XCTAssertNotNil(mockDelegate.invokedDidUpdateImageParameters)
+        XCTAssertEqual(mockDelegate.invokedDidUpdateImageParameters?.image.id, updatedImage.data.id)
         XCTAssertTrue(mockRouter.invokedPop)
         XCTAssertNotNil(mockRouter.invokedPopParameters)
         XCTAssertEqual(mockRouter.invokedPopCount, 1)
@@ -273,14 +279,20 @@ public final class ImagePresenterTests: XCTestCase {
         XCTAssertEqual(mockRouter.invokedPopCount, .zero)
     }
     
-    func test_handleCreate_Succes_InvokedRequiredRouterMethods() {
+    func test_handleCreate_Succes_InvokedRequiredRouterAndDelegateMethods() {
         XCTAssertFalse(mockRouter.invokedPop)
         XCTAssertNil(mockRouter.invokedPopParameters)
         XCTAssertEqual(mockRouter.invokedPopCount, .zero)
+        XCTAssertFalse(mockDelegate.invokedDidSaveImage)
+        XCTAssertNil(mockDelegate.invokedDidSaveImageParameters)
         
-        let updatedImage = mockDataProvider.decodeJSON(type: RestObjectResponse<Image>.self, fileName: "CreatedImage")
-        presenter.handleCreate(.success(updatedImage))
+        mockRouter.shouldInvokePopCompletion = true
+        let createdImage = mockDataProvider.decodeJSON(type: RestObjectResponse<Image>.self, fileName: "CreatedImage")
+        presenter.handleCreate(.success(createdImage))
         
+        XCTAssertTrue(mockDelegate.invokedDidSaveImage)
+        XCTAssertNotNil(mockDelegate.invokedDidSaveImageParameters)
+        XCTAssertEqual(mockDelegate.invokedDidSaveImageParameters?.image.id, createdImage.data.id)
         XCTAssertTrue(mockRouter.invokedPop)
         XCTAssertNotNil(mockRouter.invokedPopParameters)
         XCTAssertEqual(mockRouter.invokedPopCount, 1)

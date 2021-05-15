@@ -184,4 +184,36 @@ public final class ImagesPresenterTests: XCTestCase {
         
         XCTAssertEqual(presenter.page, .zero, "has next page false but page increased")
     }
+    
+    func test_didSaveImage_InvokedRequiredViewMethods() {
+        XCTAssertFalse(mockView.invokedInsertRow)
+        XCTAssertNil(mockView.invokedInsertRowParameters)
+        
+        let images = mockDataProvider.decodeJSON(type: RestArrayResponse<Image>.self, fileName: "Images")
+        let savedImage = images.data.randomElement()!
+        let indexPath = IndexPath(row: .zero, section: .zero)
+        
+        presenter.didSaveImage(image: savedImage)
+        
+        XCTAssertTrue(mockView.invokedInsertRow)
+        XCTAssertNotNil(mockView.invokedInsertRowParameters)
+        XCTAssertEqual(mockView.invokedInsertRowParameters?.indexPath, indexPath)
+    }
+    
+    func test_didUpdateImage_InvokedRequiredViewMethods() {
+        XCTAssertFalse(mockView.invokedInsertRow)
+        XCTAssertNil(mockView.invokedInsertRowParameters)
+        
+        let images = mockDataProvider.decodeJSON(type: RestArrayResponse<Image>.self, fileName: "Images")
+        let updatedImage = images.data.randomElement()!
+        let indexOfUpdatedImage = images.data.firstIndex { $0.id == updatedImage.id }!
+        let indexPath = IndexPath(row: indexOfUpdatedImage, section: .zero)
+        
+        presenter.viewDidLoad() // or presenter.handleImages(.success(images))
+        presenter.didUpdateImage(image: updatedImage)
+        
+        XCTAssertTrue(mockView.invokedReloadRows)
+        XCTAssertNotNil(mockView.invokedReloadRowsParameters)
+        XCTAssertEqual(mockView.invokedReloadRowsParameters?.indexPath, indexPath)
+    }
 }
