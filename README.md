@@ -1,3 +1,13 @@
+<p align="center">
+<img src="/logo.jpeg"/>
+</p>
+
+<p align="center">
+<img src="/update.gif"  width="200"/>
+<img src="/delete.gif" width="200"/>
+<img src="/create.gif" width="200"/>
+</p>
+
 # CaseStudy
 Spark Networks Case Study
 
