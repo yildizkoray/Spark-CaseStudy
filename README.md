@@ -1,3 +1,5 @@
+# CaseStudy - Gallery Images Upload
+
 <p align="center">
 <img src="/logo.jpeg"/>
 </p>
@@ -7,9 +9,6 @@
 <img src="/delete.gif" width="200"/>
 <img src="/create.gif" width="200"/>
 </p>
-
-# CaseStudy
-Spark Networks Case Study
 
 ## Project Tech Stack
 * Xcode: Version 12.4 (12D4e)
