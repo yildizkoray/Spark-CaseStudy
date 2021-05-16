@@ -19,4 +19,12 @@ public extension APIResponse {
             throw error!
         }
     }
+    
+    var isFailure: Bool {
+        return !isSuccess
+    }
+    
+    var isSuccess: Bool {
+        return error == nil
+    }
 }

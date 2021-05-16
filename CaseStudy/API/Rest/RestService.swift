@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import Foundation
 
 public class RestService: Service {
     
@@ -27,21 +28,35 @@ public class RestService: Service {
             self.operations[task.description]?.cancel()
         }
         
-        let operation = try! backend.execute(task: task)
-        self.operations[task.description] = operation
-        
-        operation.responseDecodable(of: R.self) { response in
-            switch response.result {
-            case .success(let apiResponse):
-                if let error = apiResponse.error {
-                    completion(.failure(error))
+        do {
+            let operation = try backend.execute(task: task)
+            self.operations[task.description] = operation
+            
+            operation.response { response in
+                switch response.result {
+                case .success(let data):
+                    guard let data = data else {
+                        completion(.failure(.noData))
+                        return
+                    }
+                    do {
+                        try JSONDecoder().decode(RestErrorResponse.self, from: data).throwErrorIfFailure()
+                        let decodedObject = try JSONDecoder().decode(R.self, from: data)
+                        completion(.success(decodedObject))
+                    } catch let error {
+                        if let apiError = error as? APIError {
+                            completion(.failure(apiError))
+                        } else {
+                            completion(.failure(.decodingError))
+                        }
+                    }
+                case .failure:
+                    completion(.failure(.afError))
+                    break
                 }
-                else {
-                    completion(.success(response.value!))
-                }
-            case .failure:
-                completion(.failure(.afError))
             }
+        } catch {
+            completion(.failure(.operationCreateError))
         }
     }
     

@@ -15,3 +15,7 @@ public struct RestArrayResponse<T: Decodable>: RestResponse {
     public var error: APIError?
     public var meta: RestMetaResponse?
 }
+
+public struct RestErrorResponse: APIResponse {
+    public var error: APIError?
+}

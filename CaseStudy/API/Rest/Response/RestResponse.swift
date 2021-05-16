@@ -19,14 +19,3 @@ public extension RestResponse {
         return meta?.nextPage ?? false
     }
 }
-
-public extension RestResponse {
-    
-    var isFailure: Bool {
-        return !isSuccess
-    }
-    
-    var isSuccess: Bool {
-        return error == nil
-    }
-}
