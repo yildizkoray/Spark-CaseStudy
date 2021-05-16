@@ -12,17 +12,20 @@ Spark Networks Case Study
 * Style Guide: [Raywenderlich](https://github.com/raywenderlich/swift-style-guide)
 * Powered by ❤️
 
-## Some Highlighted Things
+## Requirements
 - ✅ 35 unit tests
-- ✅ 5 tiny UI tests
+- ✅ 5 UI tests
 - ✅ Create, Delete and Update an image
+- ✅ Crop and rotate image
+- ✅ Pull to refresh
+- ✅ Choosing from library or taking picture
 - ✅ Pagination
 - ✅ Well organized folder structure
 - ✅ Generic response handling with Network Layer
 - ✅ Error handling
-- ✅ Custom views
+- ✅ Custom views/cell
 - ✅ Readabilibty
 - ✅ Consistency - Same approach whole code base
 
-## ToDo
+## Nice to have
 - Modularization for Network and Common Additions 
